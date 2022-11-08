@@ -3,3 +3,4 @@ patches
 st
 *.rej
 *.orig
+config.h
