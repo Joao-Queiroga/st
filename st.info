@@ -237,3 +237,16 @@ st-bs-256color| simpleterm with backspace as backspace and 256colors,
 	use=st-256color,
 	kbs=\010,
 	kdch1=\177,
+
+st-direct| simpleterm with direct colors,
+	use=st,
+	RGB,
+	colors#0x1000000, pairs#0x10000,
+	oc=\E]104\007,
+#	Nicked from xterm-256color
+	initc=\E]4;%p1%d;rgb\:%p2%{255}%*%{1000}%/%2.2X/%p3%{255}%*%{1000}%/%2.2X/%p4%{255}%*%{1000}%/%2.2X\E\\,
+#	Nicked from xterm-direct
+	setab=\E[%?%p1%{8}%<%t4%p1%d%e48;2;%p1%{65536}%/%d;%p1
+	      %{256}%/%{255}%&%d;%p1%{255}%&%d%;m,
+	setaf=\E[%?%p1%{8}%<%t3%p1%d%e38;2;%p1%{65536}%/%d;%p1
+	      %{256}%/%{255}%&%d;%p1%{255}%&%d%;m,
